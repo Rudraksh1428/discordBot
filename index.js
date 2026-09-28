@@ -6,7 +6,8 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds , GatewayIntentBi
 
 client.on("messageCreate" , (message) => 
 {
-  console.log(message.content)
+  if(message.author.bot) return;
+message.reply({content : "hii there"});
 })
 
-client.login("token")
+client.login(process.env.DISCORD_TOKEN)
