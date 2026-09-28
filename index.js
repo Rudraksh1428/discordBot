@@ -10,4 +10,8 @@ client.on("messageCreate" , (message) =>
 message.reply({content : "hii there"});
 })
 
+client.on('interactionCreate', interaction => {
+  console.log(interaction)
+  interaction.reply('pong')
+})
 client.login(process.env.DISCORD_TOKEN)
